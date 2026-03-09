@@ -1,4 +1,4 @@
-@props(['image', 'name', 'price', 'badge' => null])
+@props(['image', 'name', 'price' => null, 'badge' => null])
 
 {{--
     REDESIGNED PRODUCT CARD

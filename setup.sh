@@ -20,8 +20,8 @@ fail()    { echo -e "${RED}  ✘  $1${NC}"; exit 1; }
 # ── 1. Pull latest code ──────────────────────────────────────
 step "Fetching latest code from GitHub..."
 git fetch origin                                   || fail "git fetch failed"
-git checkout copilot/build-ecommerce-frontend       || fail "git checkout failed"
-git pull origin copilot/build-ecommerce-frontend    || fail "git pull failed"
+git checkout copilot/fix-layout-component-syntax       || fail "git checkout failed"
+git pull origin copilot/fix-layout-component-syntax    || fail "git pull failed"
 success "Code is up to date"
 
 # ── 2. PHP dependencies ──────────────────────────────────────

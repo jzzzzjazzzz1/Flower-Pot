@@ -45,6 +45,22 @@ Route::prefix('products')->name('products.')->group(function () {
     }
 });
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact', function () {
+    return back()->with('success', 'Thank you for your message! We will get back to you soon.');
+})->name('contact.store');
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

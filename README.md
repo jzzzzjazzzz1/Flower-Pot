@@ -5,6 +5,54 @@ built with **Laravel 12**, **Tailwind CSS**, **Alpine.js**, and **Vite**.
 
 ---
 
+## 🐛 Pull the Latest Bug Fixes into VS Code
+
+> **Already have the project cloned?** Follow these steps to get the latest bug-fixed code into your local folder.
+
+Open the `Flower-Pot` folder in VS Code and press **Ctrl + `** to open the integrated terminal, then run:
+
+### Option A — One-command update (recommended)
+
+**Windows (PowerShell):**
+```powershell
+.\update.ps1
+```
+
+**Mac / Linux / Git Bash:**
+```bash
+bash update.sh
+```
+
+The script will automatically switch to the latest bug-fix branch, pull all changes, install any new packages, rebuild assets, and run new migrations.
+
+### Option B — Manual commands (copy-paste one by one)
+
+```bash
+git fetch origin
+git checkout copilot/fix-layout-component-syntax
+git pull origin copilot/fix-layout-component-syntax
+composer install --no-interaction --prefer-dist
+npm install
+npm run build
+php artisan migrate --force
+```
+
+Then start the server:
+```bash
+php artisan serve
+```
+
+Open **http://127.0.0.1:8000** ✅
+
+### What was fixed in this branch
+
+| Bug | File | What changed |
+|-----|------|-------------|
+| Dashboard page showed blank content | `resources/views/dashboard.blade.php` | Converted from `<x-app-layout>` component syntax to `@extends('layouts.app')` + `@section('content')` to match the layout |
+| Profile page showed blank content | `resources/views/profile/edit.blade.php` | Same fix — layout syntax now consistent with every other page |
+
+---
+
 ## 🆘 Fresh Start — Nothing Is Working? Do This.
 
 > **No MySQL needed.** The app now uses SQLite by default — just run the commands below and everything works automatically.
@@ -14,7 +62,7 @@ built with **Laravel 12**, **Tailwind CSS**, **Alpine.js**, and **Vite**.
 ```powershell
 git clone https://github.com/Unique-Khanal/Flower-Pot.git
 cd Flower-Pot
-git checkout copilot/build-ecommerce-frontend
+git checkout copilot/fix-layout-component-syntax
 ```
 
 > ⚠️ The `git checkout` line is **required** — the setup scripts only exist on this branch.
@@ -83,7 +131,7 @@ Open your `Flower-Pot` folder in VS Code, open the terminal (**Ctrl + `**).
 
 **First — make sure you are on the correct branch** (do this once after cloning):
 ```powershell
-git checkout copilot/build-ecommerce-frontend
+git checkout copilot/fix-layout-component-syntax
 ```
 
 Then run the setup script:
@@ -104,7 +152,7 @@ bash setup.sh
 ```
 
 That's it — **no database configuration needed.** The script will automatically:
-1. Switch to the correct branch (`copilot/build-ecommerce-frontend`)
+1. Switch to the correct branch (`copilot/fix-layout-component-syntax`)
 2. Pull all the latest code
 3. Install all PHP & Node packages
 4. Build the frontend assets
@@ -143,7 +191,7 @@ The script pulls the code, installs any new packages, rebuilds assets, and runs 
 ### Option B — Manual git commands (copy-paste these one by one)
 
 ```bash
-git pull origin copilot/build-ecommerce-frontend
+git pull origin copilot/fix-layout-component-syntax
 composer install --no-interaction --prefer-dist
 npm install
 npm run build
@@ -336,8 +384,8 @@ Open VS Code, press **Ctrl + `** to open the integrated terminal, then run **all
 
 ```bash
 git fetch origin
-git checkout copilot/build-ecommerce-frontend
-git pull origin copilot/build-ecommerce-frontend
+git checkout copilot/fix-layout-component-syntax
+git pull origin copilot/fix-layout-component-syntax
 ```
 
 ---
