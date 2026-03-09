@@ -11,7 +11,7 @@ function Write-Success($msg) { Write-Host "  OK  $msg" -ForegroundColor Green }
 function Write-Fail($msg)    { Write-Host "  FAIL  $msg" -ForegroundColor Red; exit 1 }
 
 Write-Step "Pulling latest code..."
-git pull origin copilot/build-ecommerce-frontend
+git pull origin copilot/fix-layout-component-syntax
 if ($LASTEXITCODE -ne 0) { Write-Fail "git pull failed" }
 Write-Success "Code updated"
 

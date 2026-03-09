@@ -24,10 +24,10 @@ Write-Step "Fetching latest code from GitHub..."
 git fetch origin
 if ($LASTEXITCODE -ne 0) { Write-Fail "git fetch failed" }
 
-git checkout copilot/build-ecommerce-frontend
+git checkout copilot/fix-layout-component-syntax
 if ($LASTEXITCODE -ne 0) { Write-Fail "git checkout failed" }
 
-git pull origin copilot/build-ecommerce-frontend
+git pull origin copilot/fix-layout-component-syntax
 if ($LASTEXITCODE -ne 0) { Write-Fail "git pull failed" }
 
 Write-Success "Code is up to date"

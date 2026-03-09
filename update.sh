@@ -11,7 +11,7 @@ step()    { echo ""; echo -e "${CYAN}==> $1${NC}"; }
 success() { echo -e "${GREEN}  ✔  $1${NC}"; }
 
 step "Pulling latest code..."
-git pull origin copilot/build-ecommerce-frontend
+git pull origin copilot/fix-layout-component-syntax
 success "Code updated"
 
 step "Installing any new PHP packages..."
